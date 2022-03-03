@@ -1,0 +1,61 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage{graphicx}
+% Set path for figure inputs
+\graphicspath{{../output/figures/}}
+% Set path for tables input
+\makeatletter
+\def\input@path{{../output/tables/}}
+\makeatother
+
+\usepackage{natbib}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[normalem]{ulem}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{calc}
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{wrapfig}
+\usepackage{adjustbox}
+
+
+\usepackage{hyperref}
+\hypersetup{
+	pdfauthor = {Dr. Ruben Dewitte},
+	pdftitle = {Foreign-born population in European Countries},
+	pdfkeywords = {},
+	colorlinks=false
+}
+
+\title{Foreign-born population in European Countries}
+\author{dr. Ruben Dewitte}
+\date{\today}
+
+
+
+\begin{document}
+	\maketitle
+	
+	
+\begin{figure}
+	\centering
+	\includegraphics{foreign_born.png}
+	\caption{Evolution of foreign-born population as a percentage of the total population for selected European countries between 2000 and 2019. \newline
+	\textbf{Source:} Author's calculations based on \citep{oecd2022foreign}.}
+	\label{fig_foreign_born}
+\end{figure}
+
+\input{foreign_born_2000.tex}
+
+
+
+\bibliographystyle{chicago}
+\bibliography{../bibliography.bib}
+
+	
+\end{document}
