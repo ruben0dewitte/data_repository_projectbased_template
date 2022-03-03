@@ -1,21 +1,19 @@
 # Overview
 
-The code in this replication package performs analysis using one data
-source (Vargas (2021)) using R. A Master file runs all of the code to
-generate the data for the figures and tables in the paper. The
-replicator should expect the code to run for about 30 secs.
+The code in this replication package performs analysis using two data
+sources (OECD (2022); Duncalfe (2022)) using R. A Master file runs all
+of the code to generate the data for the figures and tables in the
+paper. The replicator should expect the code to run for about 1 min.
 
 # Data Availability and Provenance Statements
 
 The data relied on in this paper can be found in the ‘./input’ folder of
 the repository and is described in the Table below:
 
-| Data File                      | Source        | Provided | Additional information                                                                                            |
-|:-------------------------------|:--------------|:---------|:------------------------------------------------------------------------------------------------------------------|
-| ./input/agtpa_applications.rda | (Vargas 2021) | yes      | Data on intra- and International trade data collected from the applications in the manual of Yotov et al. (2016). |
-
-A codebook describing the variable labels for each included dataset is
-available in ‘./input/codebook.xlsx.’
+| Data File                     | Source          | Provided | Additional information                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|:------------------------------|:----------------|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ./input/foreign_born_OECD.csv | (OECD 2022)     | yes      | The foreign-born population covers all people who have ever migrated from their country of birth to their current country of residence. The foreign-born population data shown here include people born abroad as nationals of their current country of residence. The difference across countries between the size of the foreign-born population and that of the foreign population depends on the rules governing the acquisition of citizenship in each country. This indicator is measured as a percentage of population. |
+| ./input/country_codes.csv     | (Duncalfe 2022) | yes      | ISO-3166 Country and Dependent Territories Lists with UN Regional Codes                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 
 # Computing environment
 
@@ -77,40 +75,36 @@ Further files and directories refer to:
 A mapping of the Figures displayed in the paper to the respective
 programs can be found below:
 
-| Nr. | Program          | Output                           | Note |
-|----:|:-----------------|:---------------------------------|:-----|
-|   1 | ./code/06_RTAs.R | ./output/figures/fig_rta_evo.png |      |
+| Nr. | Program              | Output                            | Note |
+|----:|:---------------------|:----------------------------------|:-----|
+|   1 | ./code/02_analysis.R | ./output/figures/foreign_born.png |      |
 
 A mapping of the Tables displayed in the paper to the respective
 programs can be found below:
 
-| Nr. | Program                                 | Output                                       | Note |
-|----:|:----------------------------------------|:---------------------------------------------|:-----|
-|   1 | ./code/04_TraditionalGravityEstimates.R | ./output/tables/tab_traditional_gravity.tex  |      |
-|   2 | ./code/04_TraditionalGravityEstimates.R | ./output/tables/tab_traditional_gravity.docx |      |
-|   3 | ./code/05_DistancePuzzle.R              | ./output/tables/tab_distance_gravity.tex     |      |
-|   4 | ./code/05_DistancePuzzle.R              | ./output/tables/tab_distance_gravity.docx    |      |
-|   5 | ./code/06_RTAs.R                        | ./output/tables/tab_rta_gravity.tex          |      |
-|   6 | ./code/06_RTAs.R                        | ./output/tables/tab_rta_gravity.docx         |      |
+| Nr. | Program              | Output                            | Note |
+|----:|:---------------------|:----------------------------------|:-----|
+|   1 | ./code/02_analysis.R | ./output/tables/foreign_born.tex  |      |
+|   2 | ./code/02_analysis.R | ./output/tables/foreign_born.docx |      |
 
 # References
 
 <div id="refs" class="references csl-bib-body hanging-indent">
 
-<div id="ref-vargas2021tradepolicy" class="csl-entry">
+<div id="ref-duncalfe2022countries" class="csl-entry">
 
-Vargas, Mauricio. 2021. “Tradepolicy: Replication of ’an Advanced Guide
-to Trade Policy Analysis’.”
-<https://github.com/pachadotdev/tradepolicy/blob/main/data/agtpa_applications.rda>,
-Accessed on 02-March-2022.
+Duncalfe, Luke. 2022. “<span class="nocase">ISO-3166 Country and
+Dependent Territories Lists with UN Regional Codes</span>.”
+<https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes>,
+Accessed on 11-February-2022.
 
 </div>
 
-<div id="ref-yotov2016advanced" class="csl-entry">
+<div id="ref-oecd2022foreign" class="csl-entry">
 
-Yotov, Yoto V, Roberta Piermartini, Mario Larch, et al. 2016. *An
-Advanced Guide to Trade Policy Analysis​: The Structural Gravity Model*.
-WTO iLibrary.
+OECD. 2022. “<span class="nocase">Foreign-born population
+(indicator)</span>.” <https://doi.org/10.1787/5a368e1b-en>, Accessed on
+11-February-2022.
 
 </div>
 
