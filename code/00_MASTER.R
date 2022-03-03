@@ -16,11 +16,13 @@ source(here("code","01_setup.R"))
 
 # Dataprep - Prepare the data ----------------------------------------------------------------
 
-source(here("code","02_dataprep.R"))
+source(here("code","03_dataprep.R"))
 
-# Analysis - Analyse the data ----------------------------------------------------------------
+# Analysis ----------------------------------------------------------------
 
-source(here("code","03_analysis.R"))
+source(here("code","04_TraditionalGravityEstimates.R"))
+source(here("code","05_DistancePuzzle.R"))
+source(here("code","06_RTAs.R"))
 
 
 

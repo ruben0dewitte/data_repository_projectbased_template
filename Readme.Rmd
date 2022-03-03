@@ -1,18 +1,18 @@
 ---
-title: 'README-file to template paper titled ''Foreign-born population in European Countries'' by Ruben Dewitte'
+title: 'README-file for replication of the course ''Introduction to Gravity in R'' by Ruben Dewitte'
 author: "Ruben Dewitte"
 date: "`r Sys.Date()`"
 output:
-  md_document:
-    variant: gfm
   word_document:
-    toc: yes
-  pdf_document: 
     toc: yes
   html_document:
     number_sections: yes
     toc: yes
     toc_float: yes
+  pdf_document: 
+    toc: yes
+  md_document:
+    variant: gfm
 bibliography: bibliography.bib  
 csl: chicago-author-date-withnotes.csl
 ---
@@ -23,24 +23,22 @@ library(knitr)
 
 # Overview
 
-The code in this replication package performs analysis using two data sources (@oecd2022foreign; @duncalfe2022countries) using R. A Master file runs all of the code to generate the data for the figures and tables in the paper. The replicator should expect the code to run for about 1 min.
+The code in this replication package performs analysis using one data source (@vargas2021tradepolicy) using R. A Master file runs all of the code to generate the data for the figures and tables in the paper. The replicator should expect the code to run for about 30 secs.
 
 # Data Availability and Provenance Statements
 
 The data relied on in this paper can be found in the './input' folder of the repository and is described in the Table below:
 
 ```{r,echo = FALSE}
-
-
 data_descr = rbind.data.frame(
-              oecd = c("./input/foreign_born_OECD.csv", "[@oecd2022foreign]", "yes", "The foreign-born population covers all people who have ever migrated from their country of birth to their current country of residence. The foreign-born population data shown here include people born abroad as nationals of their current country of residence. The difference across countries between the size of the foreign-born population and that of the foreign population depends on the rules governing the acquisition of citizenship in each country. This indicator is measured as a percentage of population."),
-              country_codes = c("./input/country_codes.csv", "[@duncalfe2022countries]", "yes", "ISO-3166 Country and Dependent Territories Lists with UN Regional Codes")
+              vargas = c("./input/agtpa_applications.rda", "[@vargas2021tradepolicy]", "yes", "Data on intra- and International trade data collected from the applications in the manual of @yotov2016advanced.")
 )
 colnames(data_descr) = c("Data File", "Source", "Provided", "Additional information")
 
-
 kable(data_descr)
 ```
+
+A codebook describing the variable labels for each included dataset is available in './input/codebook.xlsx'.
 
 # Computing environment
 
@@ -79,11 +77,10 @@ A mapping of the Figures displayed in the paper to the respective programs can b
 
 ```{r,echo = FALSE}
 fig_descr = rbind.data.frame(
-              fig1 = c(NA,"./code/02_analysis.R", "./output/figures/foreign_born.png"," ")
+              fig1 = c(NA,"./code/06_RTAs.R", "./output/figures/fig_rta_evo.png"," ")
 )
 fig_descr[,1] = 1:nrow(fig_descr)
 colnames(fig_descr) = c("Nr.", "Program", "Output", "Note")
-
 
 kable(fig_descr)
 ```
@@ -92,13 +89,15 @@ A mapping of the Tables displayed in the paper to the respective programs can be
 
 ```{r,echo = FALSE}
 tab_descr = rbind.data.frame(
-              tab1a = c(NA,"./code/02_analysis.R", "./output/tables/foreign_born.tex"," "),
-              tab1b = c(NA,"./code/02_analysis.R", "./output/tables/foreign_born.docx"," ")
-
+  tab1a = c(NA,"./code/04_TraditionalGravityEstimates.R", "./output/tables/tab_traditional_gravity.tex"," "),
+  tab1b = c(NA,"./code/04_TraditionalGravityEstimates.R", "./output/tables/tab_traditional_gravity.docx"," "),
+  tab2a = c(NA,"./code/05_DistancePuzzle.R", "./output/tables/tab_distance_gravity.tex"," "),
+  tab2b = c(NA,"./code/05_DistancePuzzle.R", "./output/tables/tab_distance_gravity.docx"," "),
+  tab3a = c(NA,"./code/06_RTAs.R", "./output/tables/tab_rta_gravity.tex"," "),
+  tab3b = c(NA,"./code/06_RTAs.R", "./output/tables/tab_rta_gravity.docx"," ")
 )
 tab_descr[,1] = 1:nrow(tab_descr)
 colnames(tab_descr) = c("Nr.", "Program", "Output", "Note")
-
 
 kable(tab_descr)
 ```
